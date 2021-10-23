@@ -1,4 +1,4 @@
-# Rewrite HTML response at the edge (with JavaScript SDK)
+# Rewrite HTML response at the edge (with JS SDK)
 
 This example Compute@Edge app is designed to modify the HTML returned from https://example.com on the fly.
 - Inserting Google Fonts link tags
