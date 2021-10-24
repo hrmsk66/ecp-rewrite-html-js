@@ -8,6 +8,14 @@ const CSS = DECODER.decode(fastly.includeBytes('src/style.css'));
 
 async function handleRequest(event) {
   let req = event.request;
+  // Tell robots not to index
+  const url = new URL(req.url);
+  if (url.pathname == '/robots.txt') {
+    return new Response('User-agent: *\nDisallow: /', {
+      status: 200,
+    });
+  }
+
   // Add the host header so that you don't need to specify it in a request when testing locally
   req.headers.set('host', 'example.com');
   // Request an uncompressed response
