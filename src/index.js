@@ -37,11 +37,11 @@ async function rewriteHtml(beresp) {
 
   // Modify inner contents of h1 tags - enclose each word with span tags.
   // "<h1>Example Domain</h1>" -> "<h1><span>Example</span><span>Domain</span></h1>"
-  const h1_text = $('h1').text()
+  const innerText = $('h1').text()
     .split(' ')
     .map(w => `<span>${w}</span>`)
     .join('');
-  $('h1').html(h1_text);
+  $('h1').html(innerText);
 
   return new Response($.html(), {
     status: beresp.status,
