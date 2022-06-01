@@ -12,3 +12,9 @@ service_id = ""
   [local_server.backends]
     [local_server.backends.backend_1]
       url = "https://example.com"
+
+[setup]
+  [setup.backends]
+    [setup.backends.backend_1]
+      address = "example.com"
+      port = 443
