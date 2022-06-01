@@ -1,24 +1,14 @@
 # This file describes a Fastly Compute@Edge package. To learn more visit:
 # https://developer.fastly.com/reference/fastly-toml/
 
-authors = ["hrmsk66@gmail.com"]
-description = "A basic starter kit that demonstrates routing, simple synthetic responses and overriding caching rules."
+authors = ["hkakehashi+demo@fastly.com"]
+description = "Sample Compute@Edge app that modifies HTML returned from https://example.com on the fly"
 language = "javascript"
 manifest_version = 2
-name = "rewrite-html-js"
-service_id = "2A6yvGYr63GAPSDqoWw8mH"
+name = "ecp-rewrite-html-js"
+service_id = ""
 
 [local_server]
-
   [local_server.backends]
-
-    [local_server.backends.example_com]
+    [local_server.backends.backend_1]
       url = "https://example.com"
-
-[setup]
-
-  [setup.backends]
-
-    [setup.backends.example_com]
-      address = "example.com"
-      port = 443
